@@ -1,0 +1,14 @@
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\bin\Debug\net8.0\DAL.dll
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\bin\Debug\net8.0\DAL.pdb
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\DAL.dll
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\DAL.pdb
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\DAL\obj\Debug\net8.0\ref\DAL.dll

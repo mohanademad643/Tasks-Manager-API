@@ -1,0 +1,15 @@
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\bin\Debug\net8.0\BLL.deps.json
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\bin\Debug\net8.0\BLL.dll
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\bin\Debug\net8.0\BLL.pdb
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\bin\Debug\net8.0\DAL.dll
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\bin\Debug\net8.0\DAL.pdb
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\BLL.csproj.AssemblyReference.cache
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\BLL.AssemblyInfo.cs
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\BLL.csproj.CoreCompileInputs.cache
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\BLL.csproj.Up2Date
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\BLL.dll
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\refint\BLL.dll
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\BLL.pdb
+D:\.mohamed\CRUD-TaskAPI\CRUD-TasksProject\BLL\obj\Debug\net8.0\ref\BLL.dll
