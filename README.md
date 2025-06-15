@@ -1,0 +1,1 @@
+Task Management System built with .NET Core Web API, enabling Users and Admins to perform CRUD operations (Create, Read, Update, Delete) on tasks. The system is secured with ASP.NET Core Identity and JWT Token Authentication, following a Three-Tier Architecture (Presentation, Business Logic, Data Access), Repository Pattern, and Unit of Work for efficient data management.
