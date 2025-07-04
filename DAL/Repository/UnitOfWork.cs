@@ -8,14 +8,14 @@ namespace DAL.Repository
     public class UnitOfWork : IUnitOfWork
     {
         private readonly TaskDbContext _context;
-        public IRepository<User> Users { get; }
-        public IRepository<Tasks> Tasks { get; }
+        public ITaskRepository<User> Users { get; }
+        public ITaskRepository<Tasks> Tasks { get; }
 
         public UnitOfWork(TaskDbContext context)
         {
             _context = context;
-            Users = new Repository<User>(context);
-            Tasks = new Repository<Tasks>(context);
+            Users = new TaskRepository<User>(context);
+            Tasks = new TaskRepository<Tasks>(context);
         }
 
         public async Task<int> SaveChangesAsync() => await _context.SaveChangesAsync();

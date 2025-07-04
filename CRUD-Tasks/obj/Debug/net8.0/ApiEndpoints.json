@@ -33,6 +33,27 @@
   },
   {
     "ContainingType": "TasksController",
+    "Method": "UpdateUserStatus",
+    "RelativePath": "api/Tasks/{userId}/status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "statusDto",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TasksController",
     "Method": "CreateTask",
     "RelativePath": "api/Tasks/CreateTask",
     "HttpMethod": "POST",
@@ -79,6 +100,37 @@
   },
   {
     "ContainingType": "TasksController",
+    "Method": "GetTasksByDateRange",
+    "RelativePath": "api/Tasks/date-range",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BLL.DTOs.TaskDto, BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TasksController",
     "Method": "DeleteTask",
     "RelativePath": "api/Tasks/DeleteTask/{id}",
     "HttpMethod": "DELETE",
@@ -97,6 +149,16 @@
     "ContainingType": "TasksController",
     "Method": "GetAllTasks",
     "RelativePath": "api/Tasks/GetAllTasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TasksController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Tasks/GetAllUsers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -153,6 +215,32 @@
   },
   {
     "ContainingType": "TasksController",
+    "Method": "SearchTasksByTitle",
+    "RelativePath": "api/Tasks/GetUserTasksByTitle",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BLL.DTOs.TaskDto, BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TasksController",
     "Method": "UpdateTask",
     "RelativePath": "api/Tasks/UpdateTask/{id}",
     "HttpMethod": "PUT",
@@ -196,6 +284,32 @@
       },
       {
         "Name": "Status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TasksController",
+    "Method": "UpdateUsetTaskStatus",
+    "RelativePath": "api/Tasks/UpdateUserTaskStatus",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TaskId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NewStatus",
         "Type": "System.String",
         "IsRequired": false
       }

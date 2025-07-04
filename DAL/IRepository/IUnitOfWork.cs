@@ -5,8 +5,8 @@ namespace DAL.IRepository
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<User> Users { get; }
-        IRepository<Tasks> Tasks { get; }
+        ITaskRepository<User> Users { get; }
+        ITaskRepository<Tasks> Tasks { get; }
         Task<int> SaveChangesAsync();
     }
 }

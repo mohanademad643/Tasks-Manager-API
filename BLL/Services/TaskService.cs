@@ -8,6 +8,7 @@ using DAL.IRepository;
 using DAL.Models.Entites;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace BLL.Services
 {
@@ -27,7 +28,19 @@ namespace BLL.Services
         }
 
 
+        public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
+        {
+            try
+            {
+                var Users = await _unitOfWork.Users.GetAllUserAsync();
+                return _mapper.Map<IEnumerable<UserDto>>(Users);
 
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
         public async Task<IEnumerable<TaskDto>> GetAllTasksAsync()
         {
             try
@@ -61,7 +74,31 @@ namespace BLL.Services
                 throw new ApplicationException($"An error occurred while retrieving task with ID {id}.", ex);
             }
         }
-   
+        public async Task<TaskDto> UpdateTaskStatusAsync(int taskId, string userId, string newStatus)
+        {
+            var task = await _unitOfWork.Tasks.UpdateTaskStatusAsync(taskId, userId, newStatus);
+            if (task == null)
+            {
+                return null;
+            }
+
+            return new TaskDto
+            {
+                Id = (task as Tasks).Id,
+                Title = task.Title,
+                User = new UserDto
+                {
+                    Id = task.User.Id,
+                    Username = task.User.UserName,
+                    Status = task.User.Status,
+                    Role = task.User.Role
+                },
+                Deadline = task.Deadline ?? DateTime.Now,
+                Image = (task as Tasks).Image,
+                Description = (task as Tasks).Description,
+                Status = (task as Tasks).Status
+            };
+        }
         public async Task<TaskDto> CreateTaskAsync(CreateTaskDto createTaskDto)
         {
             try
@@ -125,6 +162,26 @@ namespace BLL.Services
                 throw new ApplicationException("An error occurred while creating the task.", ex);
             }
         }
+        public async Task<IEnumerable<TaskDto>> GetTasksByDateRangeAsync(DateTime startDate, DateTime endDate) 
+        {
+            var tasks = await _unitOfWork.Tasks.GetAllByDateRangeAsync(startDate, endDate);
+            return tasks.Select(t => new TaskDto
+            {
+                Id = (t as Tasks)?.Id ?? 0,
+                Title = t.Title,
+                User = new UserDto
+                {
+                    Id = t.User.Id,
+                    Username = t.User.UserName,
+                    Status = t.User.Status,
+                    Role = t.User.Role
+                },
+                Deadline = t.Deadline ?? DateTime.Now,
+                Image = t.Image,
+                Description = t.Description,
+                Status = t.Status
+            }).ToList();
+        }
         public async Task UpdateTaskAsync(int id, UpdateTaskDto updateTaskDto)
         {
             try
@@ -187,8 +244,44 @@ namespace BLL.Services
                 throw new ApplicationException($"An error occurred while updating task with ID {id}.", ex);
             }
         }
+        public async Task<IEnumerable<TaskDto>> SearchTasksByTitleAsync(string title)
+        {
+            var tasks = await _unitOfWork.Tasks.GetAllTasksByTitle(title);
+            return tasks.Select(t => new TaskDto
+            {
+                Id = t.Id,
+                Title = t.Title,
+                User = new UserDto
+                {
+                    Id = t.User.Id,
+                    Username = t.User.UserName,
+                    Status = t.User.Status,
+                    Role = t.User.Role
+                },
+                Deadline = t.Deadline ?? DateTime.Now,
+                Image = t.Image,
+                Description = t.Description,
+                Status = t.Status
+            }).ToList();
+        }
+        public async Task<bool> UpdateUserStatusAsync(string userId, string status)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return false;
+            }
 
+            user.Status = status;
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                await _unitOfWork.SaveChangesAsync();
+                return true;
+            }
 
+            return false;
+        }
         public async Task DeleteTaskAsync(int id)
         {
             try
